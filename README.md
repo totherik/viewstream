@@ -9,7 +9,7 @@ var viewstream = require('viewsteam');
 
 var renderer;
 
-renderer = viewers.dust(function (name, context, cb) {
+renderer = viewstream.dust(function (name, context, cb) {
     cb(null, 'Hello, {name}!');
 });
 
@@ -25,8 +25,8 @@ http.createServer(function onrequest(req, res) {
 * `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
 
 ```javascript
-var viewers = require('viewers'),
-    engine = viewers.dust(onload);
+var viewstream = require('viewstream'),
+    engine = viewstream.dust(onload);
 
 engine.render('index', { name: 'world' }).pipe(res);
 ```
@@ -36,8 +36,8 @@ engine.render('index', { name: 'world' }).pipe(res);
 * `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
 
 ```javascript
-var viewers = require('viewers'),
-    engine = viewers.html(onload);
+var viewstream = require('viewstream'),
+    engine = viewstream.html(onload);
 
 engine.json({ name: 'world' }).pipe(res);
 ```
