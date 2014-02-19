@@ -1,0 +1,23 @@
+{
+  "name": "viewstream",
+  "version": "0.0.0",
+  "description": "A rendering engine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.paypal.com/ertoth/viewstream.git"
+  },
+  "author": "Erik Toth <ertoth@paypal.com>",
+  "license": "MIT",
+  "dependencies": {
+    "readable-stream": "~1.1.10",
+    "concat-stream": "~1.4.1",
+    "caller": "~0.0.1",
+    "freshy": "~0.0.2",
+    "dustjs-onload-context": "~0.2.0",
+    "JSONStream": "~0.8.0"
+  }
+}
