@@ -7,13 +7,13 @@ var http = require('http');
 var viewstream = require('viewsteam');
 
 
-var renderer, server;
+var renderer;
 
 renderer = viewers.dust(function (name, context, cb) {
     cb(null, 'Hello, {name}!');
 });
 
-server = http.createServer(function onrequest(req, res) {
+http.createServer(function onrequest(req, res) {
     res.statusCode = 200;
     renderer.render('name', { name: 'Erik' }).pipe(res);
 }).listen(8000);
