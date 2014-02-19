@@ -27,7 +27,8 @@
     "tape": "~2.4.2",
     "istanbul": "~0.2.4",
     "jshint": "~2.4.3",
+    "dustjs-linkedin": "~2.3.3",
     "dustjs-helpers": "~1.1.2",
-    "dusthelpers-supplement": "0.0.4"
+    "raptor": "~2.7.6-SNAPSHOT"
   }
 }

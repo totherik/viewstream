@@ -1,10 +1,10 @@
 'use strict';
 
-var path = require('path'),
-    caller = require('caller'),
-    concat = require('concat-stream'),
-    JSONStream = require('JSONStream'),
-    stream = require('readable-stream');
+var path = require('path');
+var caller = require('caller');
+var concat = require('concat-stream');
+var JSONStream = require('JSONStream');
+var stream = require('readable-stream');
 
 
 

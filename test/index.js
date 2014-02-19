@@ -1,7 +1,7 @@
 'use strict';
 
-var viewers = require('../'),
-    http = require('http');
+var viewers = require('../');
+var http = require('http');
 
 
 var options, renderer, server;
