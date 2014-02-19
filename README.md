@@ -2,6 +2,23 @@
 
 A streaming view rendering engine/abstraction.
 
+```javascript
+var http = require('http');
+var viewstream = require('viewsteam');
+
+
+var renderer, server;
+
+renderer = viewers.dust(function (name, context, cb) {
+    cb(null, 'Hello, {name}!');
+});
+
+server = http.createServer(function onrequest(req, res) {
+    res.statusCode = 200;
+    renderer.render('name', { name: 'Erik' }).pipe(res);
+}).listen(8000);
+```
+
 ## API
 ### dust(onload)
 
