@@ -89,19 +89,40 @@ function create(renderer) {
 }
 
 
+function defaults(fn) {
+    return function (options, onload) {
+        if (typeof options === 'function') {
+            onload = options;
+            options = {};
+        }
 
-exports.dust = function (onload) {
-    var basedir, dust, renderer;
+        options.basedir = options.basedir || path.dirname(caller());
+        return fn(options, onload);
+    };
+}
 
-    basedir = path.dirname(caller());
+
+exports.dust = defaults(function dust(options, onload) {
+    var dust, renderer;
+
     dust = require('./lib/dustjs');
-    renderer = dust(basedir, onload);
+    renderer = dust(options, onload);
 
     return create(renderer);
-};
+});
 
 
-exports.html = function (onload) {
+exports.raptor = defaults(function raptor(options, onload) {
+     var raptor, renderer;
+
+    raptor = require('./lib/raptor');
+    renderer = raptor(options, onload);
+
+    return create(renderer);
+});
+
+
+exports.html = defaults(function html(options, onload) {
 
     return create({
 
@@ -140,7 +161,7 @@ exports.html = function (onload) {
 
     });
 
-};
+});
 
 
 

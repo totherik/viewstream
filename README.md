@@ -18,7 +18,7 @@ http.createServer(function onrequest(req, res) {
 ```
 
 ## API
-### dust(onload)
+### dust([options], onload)
 
 * `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
 
@@ -29,7 +29,18 @@ var viewstream = require('viewstream'),
 engine.render('index', { name: 'world' }).pipe(res);
 ```
 
-### html(onload)
+### raptor([options], onload)
+
+* `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
+
+```javascript
+var viewstream = require('viewstream'),
+    engine = viewstream.raptor(onload);
+
+engine.render('index', { name: 'world' }).pipe(res);
+```
+
+### html([options], onload)
 
 * `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
 
