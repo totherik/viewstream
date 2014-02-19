@@ -7,9 +7,7 @@ var http = require('http');
 var viewstream = require('viewsteam');
 
 
-var renderer;
-
-renderer = viewstream.dust(function (name, context, cb) {
+var renderer = viewstream.dust(function (name, context, cb) {
     cb(null, 'Hello, {name}!');
 });
 
