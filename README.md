@@ -1,10 +1,10 @@
-# viewers
+# viewstream
 
 A streaming view rendering engine/abstraction.
 
 ```javascript
 var http = require('http');
-var viewstream = require('viewsteam');
+var viewstream = require('viewstream');
 
 
 var renderer = viewstream.dust(function (name, context, cb) {
