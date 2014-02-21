@@ -1,6 +1,7 @@
 # viewstream
 
-A streaming view rendering engine/abstraction.
+Experiments in streaming view rendering engine/abstraction.
+TODO: Support for additional view renderers/templating engines.
 
 ```javascript
 var http = require('http');
@@ -25,17 +26,6 @@ http.createServer(function onrequest(req, res) {
 ```javascript
 var viewstream = require('viewstream'),
     engine = viewstream.dust(onload);
-
-engine.render('index', { name: 'world' }).pipe(res);
-```
-
-### raptor([options], onload)
-
-* `onload` (*Function*) - The function used for loading templates. Signature: `function (name, context, callback)`.
-
-```javascript
-var viewstream = require('viewstream'),
-    engine = viewstream.raptor(onload);
 
 engine.render('index', { name: 'world' }).pipe(res);
 ```

@@ -20,15 +20,13 @@
     "caller": "~0.0.1",
     "freshy": "~0.0.2",
     "dustjs-onload-context": "~0.2.0",
-    "JSONStream": "~0.8.0",
-    "dustjs-linkedin": "~2.3.3"
+    "JSONStream": "~0.8.0"
   },
   "devDependencies": {
     "tape": "~2.4.2",
     "istanbul": "~0.2.4",
     "jshint": "~2.4.3",
     "dustjs-linkedin": "~2.3.3",
-    "dustjs-helpers": "~1.1.2",
-    "raptor": "~2.7.6-SNAPSHOT"
+    "dustjs-helpers": "~1.1.2"
   }
 }

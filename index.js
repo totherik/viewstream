@@ -112,16 +112,6 @@ exports.dust = defaults(function dust(options, onload) {
 });
 
 
-exports.raptor = defaults(function raptor(options, onload) {
-     var raptor, renderer;
-
-    raptor = require('./lib/raptor');
-    renderer = raptor(options, onload);
-
-    return create(renderer);
-});
-
-
 exports.html = defaults(function html(options, onload) {
 
     return create({
