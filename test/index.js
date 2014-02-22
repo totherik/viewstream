@@ -19,5 +19,7 @@ renderer = viewers.dust(options, function (name, context, cb) {
 
 server = http.createServer(function onrequest(req, res) {
     res.statusCode = 200;
-    renderer.render('name', { name: 'Erik' }).pipe(res);
+//    renderer.render('name', { name: 'Erik' }).pipe(res);
+    renderer.json('name', {foo: 'bar'}).pipe(res);
 }).listen(8000);
+

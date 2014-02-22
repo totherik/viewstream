@@ -5,6 +5,8 @@ var caller = require('caller');
 var concat = require('concat-stream');
 var JSONStream = require('JSONStream');
 var stream = require('readable-stream');
+var json = require('./lib/wrapper/json');
+var jsonp = require('./lib/wrapper/jsonp');
 
 
 
@@ -21,21 +23,24 @@ function create(renderer) {
             var stream;
 
             if (Array.isArray(obj)) {
+
                 stream = JSONStream.stringify();
                 setImmediate(function () {
                     stream.write(obj);
                     stream.end();
                 });
-                return stream;
+
+            } else {
+
+                stream = JSONStream.stringifyObject();
+                setImmediate(function () {
+                    stream.write([name, obj]);
+                    stream.end();
+                });
+
             }
 
-            stream = JSONStream.stringifyObject();
-            setImmediate(function () {
-                stream.write(['foo', obj]);
-                stream.end();
-            });
-
-            return stream;
+            return json.wrap(stream);
         },
 
         jsonp: function (callback, obj) {
@@ -52,7 +57,7 @@ function create(renderer) {
                 this.push(null);
             };
 
-            return read;
+            return jsonp.wrap(read);
         },
 
         binary: function (buffer) {
